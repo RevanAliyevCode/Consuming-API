@@ -82,6 +82,7 @@ public class ConsumerService : IConsumerService
         var existingProduct = await context.Products.FindAsync(product.Id);
         if (existingProduct is not null)
         {
+            existingProduct.Id = product.Id;
             existingProduct.Name = product.Name;
             existingProduct.Description = product.Description;
             existingProduct.Price = product.Price;

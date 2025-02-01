@@ -12,4 +12,9 @@ public class AppDbContext : DbContext
     {
     }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Product>().Property(p => p.Id).ValueGeneratedNever();
+    }
+
 }
